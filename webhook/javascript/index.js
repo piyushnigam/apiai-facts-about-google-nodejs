@@ -26,10 +26,12 @@ module['exports'] = function handleRequest(hook) {
   // Call the weather API.
   callWeatherApi(city, date).then((output) => {
     hook.res.setHeader('Content-Type', 'application/json');
-    hook.res.end(JSON.stringify({"speech": output, "displayText": output}));
+    // hook.res.end(JSON.stringify({"speech": output, "displayText": output}));
+    hook.res.end(JSON.stringify({"speech": "Here is the requested information", "displayText": output}));
   }).catch((error) => {
     hook.res.setHeader('Content-Type', 'application/json');
-    hook.res.end(JSON.stringify({"speech": error, "displayText": error}));
+    // hook.res.end(JSON.stringify({"speech": error, "displayText": error}));
+    hook.res.end(JSON.stringify({"speech": "Sorry! the requested information cannot be obtained.", "displayText": error}));
   });
 };
 
