@@ -1,0 +1,1 @@
+This webhook was created to serve as backend for the api.ai action. However, due to limitations of webhook model, it is deprecated in view of a more robust REST API on heroku. Please refer to the heroku server directory at root.
